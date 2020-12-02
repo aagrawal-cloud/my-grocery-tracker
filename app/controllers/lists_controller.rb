@@ -17,6 +17,10 @@ class ListsController < ApplicationController
     render({ :template => "lists/show.html.erb" })
   end
 
+  def create_list
+    render({ :template => "lists/create_lists.html.erb"})
+  end
+
   def create
     the_list = List.new
     #the_list.user_id = params.fetch("query_user_id")

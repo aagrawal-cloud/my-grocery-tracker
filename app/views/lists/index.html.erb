@@ -11,10 +11,10 @@
 <div>
   <div>
     <h2>
-      Add a new list
+    <a href="/insert_list">Add a new list</a>
     </h2>
-
-    <form action="/insert_list" method="post">
+<!--
+    <form action="/insert_list" method="post">-->
       <!--User will not be updated on the lists page. Only lists specific to the user will be displayed
       <div>
         <label for="user_id_box">
@@ -24,7 +24,7 @@
         <input type="text" id="user_id_box" name="query_user_id">
       </div>-->
 
-      <!--Item should be a drop down with values from the item table-->
+      <!--Item should be a drop down with values from the item table
       <div>
         <label for="item_id_box">
           Item
@@ -39,7 +39,7 @@
         </label>
 
         <input type="text" id="list_name_box" name="query_list_name">
-      </div>
+      </div>-->
 
       <!--<div>
         <label for="date_box">
@@ -57,7 +57,7 @@
         <input type="text" id="pantry_id_box" name="query_pantry_id">
       </div>-->
 
-      <!--this should be a display only of the count of  items in the list-->
+      <!--this should be a display only of the count of  items in the list
       <div>
         <label for="items_count_box">
           Items count
@@ -69,7 +69,7 @@
       <button>
         Create list
       </button>
-    </form>
+    </form>-->
   </div>
 </div>
 
@@ -157,11 +157,12 @@
           <%= time_ago_in_words(a_list.updated_at) %> ago
         </td>-->
 
-        <td>
+        <!--<td>
           <a href="/lists/<%= a_list.id %>">
             Show details
           </a>
-        </td>
+        </td>-->
+
       </tr>
       <% end %>
     </table>
