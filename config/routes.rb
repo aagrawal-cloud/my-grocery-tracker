@@ -43,7 +43,8 @@ Rails.application.routes.draw do
   # Routes for the List resource:
 
   # CREATE
-  get("/insert_list", { :controller => "lists", :action => "create_list" })
+  get("/create_list", { :controller => "lists", :action => "create_list" })
+  post("/insert_list", { :controller => "lists", :action => "create" })
           
   # READ
   get("/lists", { :controller => "lists", :action => "index" })
