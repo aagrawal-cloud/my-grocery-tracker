@@ -73,11 +73,11 @@
 <hr>
 <div>
   <div>
-    <table>
+    <table border="1">
       <tr>
-        <th>
+        <!--<th>
           ID
-        </th>
+        </th>-->
 
         <th>
           Item name
@@ -113,21 +113,24 @@
 
         <th>
         </th>
+
+        <th>
+        </th>
       </tr>
 
       <% @list_of_items.each do |an_item| %>
       <tr>
-        <td>
+        <!--<td>
           <%= an_item.id %>
-        </td>
+        </td>-->
 
         <td>
           <%= an_item.item_name %>
         </td>
 
-        <!--<td>
+        <td>
           <%= an_item.list_id %>
-        </td>-->
+        </td>
 
         <td>
           <%= an_item.quantity %>
@@ -156,6 +159,12 @@
           <a href="/items/<%= an_item.id %>">
             Show details
           </a>
+        </td>
+
+        <td>
+          <a href="/delete_item/<%= an_item.id %>">
+          Delete
+        </a>
         </td>
       </tr>
       <% end %>

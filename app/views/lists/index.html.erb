@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all lists
+      My Grocery lists
     </h1>
   </div>
 </div>
@@ -41,7 +41,7 @@
         <input type="text" id="list_name_box" name="query_list_name">
       </div>
 
-      <div>
+      <!--<div>
         <label for="date_box">
           Date
         </label>
@@ -55,8 +55,9 @@
         </label>
 
         <input type="text" id="pantry_id_box" name="query_pantry_id">
-      </div>
+      </div>-->
 
+      <!--this should be a display only of the count of  items in the list-->
       <div>
         <label for="items_count_box">
           Items count
@@ -81,37 +82,37 @@
           ID
         </th>
 
-        <th>
+        <!--<th>
           User
         </th>
 
         <th>
           Item
         </th>
+        
+        <th>
+          Date
+        </th>
+        
+        <th>
+          Pantry
+        </th>-->
 
         <th>
           List name
         </th>
 
         <th>
-          Date
+          Items
         </th>
 
-        <th>
-          Pantry
-        </th>
-
-        <th>
-          Items count
-        </th>
-
-        <th>
+        <!--<th>
           Created at
         </th>
 
         <th>
           Updated at
-        </th>
+        </th>-->
 
         <th>
         </th>
@@ -123,7 +124,7 @@
           <%= a_list.id %>
         </td>
 
-        <td>
+        <!--<td>
           <%= a_list.user_id %>
         </td>
 
@@ -132,27 +133,29 @@
         </td>
 
         <td>
-          <%= a_list.list_name %>
-        </td>
-
-        <td>
           <%= a_list.date %>
         </td>
-
+        
         <td>
           <%= a_list.pantry_id %>
+        </td>-->
+
+        <td>
+          <a href="/lists/<%= a_list.id %>">
+            <%= a_list.list_name %>
+          </a>
         </td>
 
         <td>
           <%= a_list.items_count %>
         </td>
 
-        <td>
+        <!--<td>
           <%= time_ago_in_words(a_list.created_at) %> ago
         </td>
         <td>
           <%= time_ago_in_words(a_list.updated_at) %> ago
-        </td>
+        </td>-->
 
         <td>
           <a href="/lists/<%= a_list.id %>">
