@@ -1,0 +1,147 @@
+<div>
+  <div>
+    <h1>
+      List #<%= @the_list.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/lists">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_list/<%= @the_list.id %>">
+          Delete list
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_list.user_id %>
+      </dd>
+
+      <dt>
+        Item
+      </dt>
+      <dd>
+        <%= @the_list.item_id %>
+      </dd>
+
+      <dt>
+        List name
+      </dt>
+      <dd>
+        <%= @the_list.list_name %>
+      </dd>
+
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= @the_list.date %>
+      </dd>
+
+      <dt>
+        Pantry
+      </dt>
+      <dd>
+        <%= @the_list.pantry_id %>
+      </dd>
+
+      <dt>
+        Items count
+      </dt>
+      <dd>
+        <%= @the_list.items_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_list.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_list.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit list
+    </h2>
+
+    <form action="/modify_list/<%= @the_list.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_list.user_id %>">
+      </div>
+
+      <div>
+        <label for="item_id_box">
+          Item
+        </label>
+
+        <input type="text" id="item_id_box" name="query_item_id" value="<%= @the_list.item_id %>">
+      </div>
+
+      <div>
+        <label for="list_name_box">
+          List name
+        </label>
+
+        <input type="text" id="list_name_box" name="query_list_name" value="<%= @the_list.list_name %>">
+      </div>
+
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="datetime-local" id="date_box" name="query_date"
+         value="<%= @the_list.date %>">
+      </div>
+
+      <div>
+        <label for="pantry_id_box">
+          Pantry
+        </label>
+
+        <input type="text" id="pantry_id_box" name="query_pantry_id" value="<%= @the_list.pantry_id %>">
+      </div>
+
+      <div>
+        <label for="items_count_box">
+          Items count
+        </label>
+
+        <input type="text" id="items_count_box" name="query_items_count" value="<%= @the_list.items_count %>">
+      </div>
+
+      <button>
+        Update list
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

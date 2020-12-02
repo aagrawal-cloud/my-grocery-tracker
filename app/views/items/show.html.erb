@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Item #<%= @the_item.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/items">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_item/<%= @the_item.id %>">
+          Delete item
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Item name
+      </dt>
+      <dd>
+        <%= @the_item.item_name %>
+      </dd>
+
+      <dt>
+        List
+      </dt>
+      <dd>
+        <%= @the_item.list_id %>
+      </dd>
+
+      <dt>
+        Quantity
+      </dt>
+      <dd>
+        <%= @the_item.quantity %>
+      </dd>
+
+      <dt>
+        Price
+      </dt>
+      <dd>
+        <%= @the_item.price %>
+      </dd>
+
+      <dt>
+        Quantity value
+      </dt>
+      <dd>
+        <%= @the_item.quantity_value %>
+      </dd>
+
+      <dt>
+        Pantry
+      </dt>
+      <dd>
+        <%= @the_item.pantry_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_item.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_item.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit item
+    </h2>
+
+    <form action="/modify_item/<%= @the_item.id %>"  method="post" >
+      <div>
+        <label for="item_name_box">
+          Item name
+        </label>
+
+        <input type="text" id="item_name_box" name="query_item_name" value="<%= @the_item.item_name %>">
+      </div>
+
+      <div>
+        <label for="list_id_box">
+          List
+        </label>
+
+        <input type="text" id="list_id_box" name="query_list_id" value="<%= @the_item.list_id %>">
+      </div>
+
+      <div>
+        <label for="quantity_box">
+          Quantity
+        </label>
+
+        <input type="text" id="quantity_box" name="query_quantity" value="<%= @the_item.quantity %>">
+      </div>
+
+      <div>
+        <label for="price_box">
+          Price
+        </label>
+
+        <input type="text" id="price_box" name="query_price" value="<%= @the_item.price %>">
+      </div>
+
+      <div>
+        <label for="quantity_value_box">
+          Quantity value
+        </label>
+
+        <input type="text" id="quantity_value_box" name="query_quantity_value" value="<%= @the_item.quantity_value %>">
+      </div>
+
+      <div>
+        <label for="pantry_id_box">
+          Pantry
+        </label>
+
+        <input type="text" id="pantry_id_box" name="query_pantry_id" value="<%= @the_item.pantry_id %>">
+      </div>
+
+      <button>
+        Update item
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

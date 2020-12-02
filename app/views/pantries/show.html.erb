@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Pantry #<%= @the_pantry.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/pantries">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_pantry/<%= @the_pantry.id %>">
+          Delete pantry
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Item
+      </dt>
+      <dd>
+        <%= @the_pantry.item_id %>
+      </dd>
+
+      <dt>
+        Quantity
+      </dt>
+      <dd>
+        <%= @the_pantry.quantity %>
+      </dd>
+
+      <dt>
+        Quantity value
+      </dt>
+      <dd>
+        <%= @the_pantry.quantity_value %>
+      </dd>
+
+      <dt>
+        List
+      </dt>
+      <dd>
+        <%= @the_pantry.list_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_pantry.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_pantry.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_pantry.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit pantry
+    </h2>
+
+    <form action="/modify_pantry/<%= @the_pantry.id %>"  method="post" >
+      <div>
+        <label for="item_id_box">
+          Item
+        </label>
+
+        <input type="text" id="item_id_box" name="query_item_id" value="<%= @the_pantry.item_id %>">
+      </div>
+
+      <div>
+        <label for="quantity_box">
+          Quantity
+        </label>
+
+        <input type="text" id="quantity_box" name="query_quantity" value="<%= @the_pantry.quantity %>">
+      </div>
+
+      <div>
+        <label for="quantity_value_box">
+          Quantity value
+        </label>
+
+        <input type="text" id="quantity_value_box" name="query_quantity_value" value="<%= @the_pantry.quantity_value %>">
+      </div>
+
+      <div>
+        <label for="list_id_box">
+          List
+        </label>
+
+        <input type="text" id="list_id_box" name="query_list_id" value="<%= @the_pantry.list_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_pantry.user_id %>">
+      </div>
+
+      <button>
+        Update pantry
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

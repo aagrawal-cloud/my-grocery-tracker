@@ -1,0 +1,166 @@
+<div>
+  <div>
+    <h1>
+      List of all items
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new item
+    </h2>
+
+    <form action="/insert_item" method="post">
+      <div>
+        <label for="item_name_box">
+          Item name
+        </label>
+
+        <input type="text" id="item_name_box" name="query_item_name">
+      </div>
+
+      <div>
+        <label for="list_id_box">
+          List
+        </label>
+
+        <input type="text" id="list_id_box" name="query_list_id">
+      </div>
+
+      <div>
+        <label for="quantity_box">
+          Quantity
+        </label>
+
+        <input type="text" id="quantity_box" name="query_quantity">
+      </div>
+
+      <div>
+        <label for="price_box">
+          Price
+        </label>
+
+        <input type="text" id="price_box" name="query_price">
+      </div>
+
+      <div>
+        <label for="quantity_value_box">
+          Quantity value
+        </label>
+
+        <input type="text" id="quantity_value_box" name="query_quantity_value">
+      </div>
+
+      <div>
+        <label for="pantry_id_box">
+          Pantry
+        </label>
+
+        <input type="text" id="pantry_id_box" name="query_pantry_id">
+      </div>
+
+      <button>
+        Create item
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Item name
+        </th>
+
+        <th>
+          List
+        </th>
+
+        <th>
+          Quantity
+        </th>
+
+        <th>
+          Price
+        </th>
+
+        <th>
+          Quantity value
+        </th>
+
+        <th>
+          Pantry
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_items.each do |an_item| %>
+      <tr>
+        <td>
+          <%= an_item.id %>
+        </td>
+
+        <td>
+          <%= an_item.item_name %>
+        </td>
+
+        <td>
+          <%= an_item.list_id %>
+        </td>
+
+        <td>
+          <%= an_item.quantity %>
+        </td>
+
+        <td>
+          <%= an_item.price %>
+        </td>
+
+        <td>
+          <%= an_item.quantity_value %>
+        </td>
+
+        <td>
+          <%= an_item.pantry_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_item.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_item.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/items/<%= an_item.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
