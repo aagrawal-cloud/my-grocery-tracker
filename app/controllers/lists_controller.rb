@@ -19,7 +19,7 @@ class ListsController < ApplicationController
 
   def create
     the_list = List.new
-    the_list.user_id = params.fetch("query_user_id")
+    #the_list.user_id = params.fetch("query_user_id")
     the_list.item_id = params.fetch("query_item_id")
     the_list.list_name = params.fetch("query_list_name")
     the_list.date = params.fetch("query_date")

@@ -40,19 +40,19 @@
       </div>
 
       <div>
-        <label for="price_box">
-          Price
-        </label>
-
-        <input type="text" id="price_box" name="query_price">
-      </div>
-
-      <div>
         <label for="quantity_value_box">
           Quantity metric
         </label>
 
         <input type="text" id="quantity_value_box" name="query_quantity_value">
+      </div>
+
+      <div>
+        <label for="price_box">
+          Price
+        </label>
+
+        <input type="text" id="price_box" name="query_price">
       </div>
 
       <%# <div>
@@ -92,24 +92,24 @@
         </th>
 
         <th>
-          Price
+          Quantity value
         </th>
 
         <th>
-          Quantity value
+          Price
         </th>
 
         <th>
           Pantry
         </th>
 
-        <th>
+        <!--<th>
           Created at
         </th>
 
         <th>
           Updated at
-        </th>
+        </th>-->
 
         <th>
         </th>
@@ -125,16 +125,12 @@
           <%= an_item.item_name %>
         </td>
 
-        <td>
+        <!--<td>
           <%= an_item.list_id %>
-        </td>
+        </td>-->
 
         <td>
           <%= an_item.quantity %>
-        </td>
-
-        <td>
-          <%= an_item.price %>
         </td>
 
         <td>
@@ -142,15 +138,19 @@
         </td>
 
         <td>
-          <%= an_item.pantry_id %>
+          <%= an_item.price %>
         </td>
 
         <td>
+          <%= an_item.pantry_id %>
+        </td>
+
+        <!--<td>
           <%= time_ago_in_words(an_item.created_at) %> ago
         </td>
         <td>
           <%= time_ago_in_words(an_item.updated_at) %> ago
-        </td>
+        </td>-->
 
         <td>
           <a href="/items/<%= an_item.id %>">

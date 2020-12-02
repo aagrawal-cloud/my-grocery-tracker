@@ -18,70 +18,31 @@
       </div>
     </div>
 
-    <dl>
-      <dt>
-        Item name
-      </dt>
-      <dd>
-        <%= @the_item.item_name %>
-      </dd>
 
-      <dt>
-        List
-      </dt>
-      <dd>
-        <!--Display list if the item is part of one-->
-        <%= @the_item.list_id %>
-      </dd>
-
-      <dt>
-        Quantity
-      </dt>
-      <dd>
-        <%= @the_item.quantity %>
-      </dd>
-
-      <dt>
-        Price
-      </dt>
-      <dd>
-        <%= @the_item.price %>
-      </dd>
-
-      <dt>
-        Quantity value
-      </dt>
-      <dd>
-        <%= @the_item.quantity_value %>
-      </dd>
-
-      <dt>
-        Pantry
-      </dt>
-      <dd>
-        <!--Display yes or no if the item is in pantry-->
-        <%= @the_item.pantry_id %>
-      </dd>
-
-      <!--<dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_item.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_item.updated_at) %> ago
-      </dd>-->
-    </dl>
-  </div>
-</div>
+<table border="1">
+  <tr>
+    <th>Item Name</th>
+    <th>Quantity</th>
+    <th>Quantity Value</th>
+    <th>Price</th>
+  </tr> 
+  <tr>
+    <td>
+      <%= @the_item.item_name %>
+    </td>
+    <td>
+      <%= @the_item.quantity %>
+    </td>
+    <td>
+      <%= @the_item.quantity_value %>
+    </td>
+    <td>
+      <%= @the_item.price %>
+    </td>
+   </tr> 
+</table>
 
 <hr>
-
 
 <div>
   <div>
