@@ -15,14 +15,14 @@ class UserAuthenticationController < ApplicationController
       are_they_legit = user.authenticate(the_supplied_password)
     
       if are_they_legit == false
-        redirect_to("/user_sign_in", { :alert => "Incorrect password." })
+        redirect_to("/user_sign_in", { :alert => "Incorrect passwor" })
       else
         session[:user_id] = user.id
       
         redirect_to("/", { :notice => "Signed in successfully." })
       end
     else
-      redirect_to("/user_sign_in", { :alert => "No user with that email address." })
+      redirect_to("/user_sign_in", { :alert => "No user with that email address" })
     end
   end
 
@@ -43,7 +43,7 @@ class UserAuthenticationController < ApplicationController
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.first_name = params.fetch("query_first_name")
     @user.last_name = params.fetch("query_last_name")
-    @user.lists_count = params.fetch("query_lists_count")
+    #@user.lists_count = params.fetch("query_lists_count")
 
     save_status = @user.save
 

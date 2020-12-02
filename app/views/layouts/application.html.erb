@@ -17,22 +17,43 @@
 
   <body>
   <div>
-      <h1>My Grocery Tracker
+      <h1><%= @current_user.first_name%>'s Grocery Tracker
       </h1>
   </div>
   
   <nav>
-    <ul>
-      <li>
+    <% if @current_user == nil%>
+      <div>
+        <a href="/user_sign_up">Sign up</a>
+      </div>
+
+      <div>
+        <a href="/user_sign_in">Sign in</a>
+      </div>
+
+      <% else %>
+
+      <div>
+        <a href="/user_sign_in">Sign out</a>
+      </div>
+
+      <div>
+        <a href="/user_sign_in">Edit Profile</a>
+      </div>
+
+      <div>
         <a href="/lists">My Lists</a>
-      </li>
-      <li>
+      </div>
+
+      <div>
         <a href="/pantries">My Pantry</a>
-      </li>     
-      <li>
+      </div>     
+      <div>
         <a href="/items">My Items</a>
-      </li>
-    </ul>
+      </div>
+    
+    <% end %>
+
   </nav>
     <%= yield %>
   </body>
