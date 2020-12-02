@@ -30,6 +30,7 @@
         List
       </dt>
       <dd>
+        <!--Display list if the item is part of one-->
         <%= @the_item.list_id %>
       </dd>
 
@@ -58,10 +59,11 @@
         Pantry
       </dt>
       <dd>
+        <!--Display yes or no if the item is in pantry-->
         <%= @the_item.pantry_id %>
       </dd>
 
-      <dt>
+      <!--<dt>
         Created at
       </dt>
       <dd>
@@ -73,7 +75,7 @@
       </dt>
       <dd>
         <%= time_ago_in_words(@the_item.updated_at) %> ago
-      </dd>
+      </dd>-->
     </dl>
   </div>
 </div>
@@ -95,14 +97,14 @@
 
         <input type="text" id="item_name_box" name="query_item_name" value="<%= @the_item.item_name %>">
       </div>
-
+      <!--User is not updating the list in this page
       <div>
         <label for="list_id_box">
           List
         </label>
 
         <input type="text" id="list_id_box" name="query_list_id" value="<%= @the_item.list_id %>">
-      </div>
+      </div>-->
 
       <div>
         <label for="quantity_box">
@@ -128,13 +130,14 @@
         <input type="text" id="quantity_value_box" name="query_quantity_value" value="<%= @the_item.quantity_value %>">
       </div>
 
+      <!--User is not updating the pantry in this page
       <div>
         <label for="pantry_id_box">
           Pantry
         </label>
 
         <input type="text" id="pantry_id_box" name="query_pantry_id" value="<%= @the_item.pantry_id %>">
-      </div>
+      </div> -->
 
       <button>
         Update item

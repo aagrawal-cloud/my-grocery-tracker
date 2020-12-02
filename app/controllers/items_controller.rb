@@ -20,11 +20,11 @@ class ItemsController < ApplicationController
   def create
     the_item = Item.new
     the_item.item_name = params.fetch("query_item_name")
-    the_item.list_id = params.fetch("query_list_id")
+    #the_item.list_id = params.fetch("query_list_id")
     the_item.quantity = params.fetch("query_quantity")
     the_item.price = params.fetch("query_price")
     the_item.quantity_value = params.fetch("query_quantity_value")
-    the_item.pantry_id = params.fetch("query_pantry_id")
+    #the_item.pantry_id = params.fetch("query_pantry_id")
 
     if the_item.valid?
       the_item.save
