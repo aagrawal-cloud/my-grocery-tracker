@@ -17,7 +17,7 @@
 
   <body>
   <div>
-      <h1><%= @current_user.first_name%>'s Grocery Tracker
+      <h1> Grocery Tracker
       </h1>
   </div>
   
@@ -55,6 +55,14 @@
     <% end %>
 
   </nav>
+
+  <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+
     <%= yield %>
   </body>
 </html>

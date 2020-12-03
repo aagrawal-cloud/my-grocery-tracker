@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 2020_12_02_170042) do
   create_table "items", force: :cascade do |t|
     t.string "item_name"
     t.integer "list_id"
-    t.string "quantity"
-    t.string "price"
+    t.float "quantity"
+    t.float "price"
     t.string "quantity_value"
     t.integer "pantry_id"
     t.datetime "created_at", precision: 6, null: false

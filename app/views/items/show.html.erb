@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      <%= @the_item.item_name %> Details
+      <%= @the_item.item_name %>
     </h1>
 
     <div>
@@ -18,10 +18,13 @@
       </div>
     </div>
 
+    <br>
+
 
 <table border="1">
   <tr>
     <th>Item Name</th>
+    <th>Store</th>
     <th>Quantity</th>
     <th>Quantity Unit</th>
     <th>Price</th>
@@ -29,6 +32,9 @@
   <tr>
     <td>
       <%= @the_item.item_name %>
+    </td>
+    <td>
+      <%= @the_item.list.list_name %>
     </td>
     <td>
       <%= @the_item.quantity %>
@@ -58,14 +64,20 @@
 
         <input type="text" id="item_name_box" name="query_item_name" value="<%= @the_item.item_name %>">
       </div>
-      <!--User is not updating the list in this page
+      
       <div>
         <label for="list_id_box">
-          List
+          Store
         </label>
 
-        <input type="text" id="list_id_box" name="query_list_id" value="<%= @the_item.list_id %>">
-      </div>-->
+        <select id="list_id_box" name="query_list_name">
+        <% List.all.each do |a_list|%>
+          <option>
+            <%= a_list.list_name%>
+          </option>
+        <% end %>
+      </select>
+      </div>
 
       <div>
         <label for="quantity_box">

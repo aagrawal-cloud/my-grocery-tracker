@@ -4,8 +4,8 @@
 #
 #  id             :integer          not null, primary key
 #  item_name      :string
-#  price          :string
-#  quantity       :string
+#  price          :float
+#  quantity       :float
 #  quantity_value :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
