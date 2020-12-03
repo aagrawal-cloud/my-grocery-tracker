@@ -11,10 +11,10 @@
 <div>
   <div>
     <h2>
-    <a href="/create_list">Add a new list</a>
+    Add a new list
     </h2>
-<!--
-    <form action="/insert_list" method="post">-->
+
+    <form action="/insert_list" method="post">
       <!--User will not be updated on the lists page. Only lists specific to the user will be displayed
       <div>
         <label for="user_id_box">
@@ -31,7 +31,7 @@
         </label>
 
         <input type="text" id="item_id_box" name="query_item_id">
-      </div>
+      </div>-->
 
       <div>
         <label for="list_name_box">
@@ -39,7 +39,7 @@
         </label>
 
         <input type="text" id="list_name_box" name="query_list_name">
-      </div>-->
+      </div>
 
       <!--<div>
         <label for="date_box">
@@ -64,12 +64,12 @@
         </label>
 
         <input type="text" id="items_count_box" name="query_items_count">
-      </div>
+      </div>-->
 
       <button>
         Create list
       </button>
-    </form>-->
+    </form>
   </div>
 </div>
 
@@ -146,9 +146,9 @@
           </a>
         </td>
 
-        <td>
+        <!--<td>
           <%= a_list.items_count %>
-        </td>
+        </td>-->
 
         <!--<td>
           <%= time_ago_in_words(a_list.created_at) %> ago

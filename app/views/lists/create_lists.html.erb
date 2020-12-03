@@ -1,5 +1,5 @@
 <hr>
-<h1>Create a list</h1>
+<h2>Create a list</h2>
 <form action="/insert_list" method="post">
   <div>
     <label for="list_name_box">
@@ -11,21 +11,21 @@
 
 <table>
   <tr>
-  <form action="">
+  <form action="/insert_list_item" method="post">
+
     <td>
-  
-    <select id="item_id_box" name="query_item_id">
-      <% Item.all.each do |an_item|%>
-        <option>
-          <%= an_item.item_name%>
-        </option>
-      <% end %>
-    </select>
-  </td>
+      <select id="item_id_box" name="query_item_id">
+        <% Item.all.each do |an_item|%>
+          <option>
+            <%= an_item.item_name%>
+          </option>
+        <% end %>
+      </select>
+    </td>
 
-  <td>
-
-  </td>
+    <td>
+      <button>Add</button>
+    </td>
 
   </tr>
   </form>
@@ -37,3 +37,21 @@
   </button>
   </div>
 </form>
+
+<hr>
+
+<h3>
+  <table>
+  <tr>
+    <td>
+      Item 1
+    </td>
+    <td>
+      Item 1
+    </td>
+    <td>
+      Item 1
+    </td>
+  </tr>
+
+</table>
