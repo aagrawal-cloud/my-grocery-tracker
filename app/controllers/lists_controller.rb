@@ -23,7 +23,7 @@ class ListsController < ApplicationController
 
   def create
     the_list = List.new
-    #the_list.user_id = params.fetch("query_user_id")
+    the_list.user_id = session[:user_id]
     #the_list.item_id = params.fetch("query_item_id")
     the_list.list_name = params.fetch("query_list_name")
     #the_list.date = params.fetch("query_date")
@@ -42,12 +42,12 @@ class ListsController < ApplicationController
     the_id = params.fetch("path_id")
     the_list = List.where({ :id => the_id }).at(0)
 
-    the_list.user_id = params.fetch("query_user_id")
-    the_list.item_id = params.fetch("query_item_id")
+    the_list.user_id = session[:user_id]
+    #the_list.item_id = params.fetch("query_item_id")
     the_list.list_name = params.fetch("query_list_name")
-    the_list.date = params.fetch("query_date")
-    the_list.pantry_id = params.fetch("query_pantry_id")
-    the_list.items_count = params.fetch("query_items_count")
+    #the_list.date = params.fetch("query_date")
+    #the_list.pantry_id = params.fetch("query_pantry_id")
+    #the_list.items_count = params.fetch("query_items_count")
 
     if the_list.valid?
       the_list.save

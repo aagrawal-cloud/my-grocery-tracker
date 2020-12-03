@@ -1,3 +1,5 @@
+<hr>
+<h1>Create a list</h1>
 <form action="/insert_list" method="post">
   <div>
     <label for="list_name_box">
@@ -7,13 +9,27 @@
     <input type="text" id="list_name_box" name="query_list_name" placeholder="Enter list name">
   </div>
 
-  <div>
-    <label for="list_name_box">
-      List name
-    </label>
+<table>
+  <tr>
+  <form action="">
+    <td>
+  
+    <select id="item_id_box" name="query_item_id">
+      <% Item.all.each do |an_item|%>
+        <option>
+          <%= an_item.item_name%>
+        </option>
+      <% end %>
+    </select>
+  </td>
 
-    <input type="text" id="list_name_box" name="query_list_name" placeholder="Enter list name">
-  </div>
+  <td>
+
+  </td>
+
+  </tr>
+  </form>
+</table>
 
   <div>
   <button>
