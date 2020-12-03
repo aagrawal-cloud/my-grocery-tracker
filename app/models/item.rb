@@ -20,4 +20,6 @@ class Item < ApplicationRecord
   has_one(:pantry, { :class_name => "Pantry", :foreign_key => "item_id", :dependent => :nullify })
 
   has_many(:user, { :through => :list, :source => :user })
+
+  validates(:item_name, { :uniqueness => true, :presence => { :message => "Please enter a unique name for your item"} } )
 end

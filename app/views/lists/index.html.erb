@@ -99,11 +99,17 @@
         </th>-->
 
         <th>
-          List name
+          Store name
         </th>
 
         <th>
           Items
+        </th>
+
+        <th>
+        </th>
+
+        <th>
         </th>
 
         <!--<th>
@@ -143,6 +149,20 @@
         <td>
           <a href="/lists/<%= a_list.id %>">
             <%= a_list.list_name %>
+          </a>
+        </td>
+
+        <td></td>
+
+        <td>
+          <a href=href="/modify_list/<%= a_list.id %>">
+            Edit
+          </a>
+        </td>
+
+        <td>
+          <a href="/delete_list/<%= a_list.id %>">
+            Delete
           </a>
         </td>
 

@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List #<%= @the_list.id %> details
+      Grocery list for <%= @the_list.list_name %>
     </h1>
 
     <div>
@@ -18,7 +18,15 @@
       </div>
     </div>
 
-    <dl>
+    <div>
+        <a href="/modify_list/<%= @the_list.id %>">
+          Edit list
+        </a>
+      </div>
+    </div>
+
+
+    <!--<dl>
       <dt>
         User
       </dt>
@@ -74,7 +82,7 @@
       <dd>
         <%= time_ago_in_words(@the_list.updated_at) %> ago
       </dd>
-    </dl>
+    </dl>-->
   </div>
 </div>
 
@@ -88,7 +96,7 @@
     </h2>
 
     <form action="/modify_list/<%= @the_list.id %>"  method="post" >
-      <div>
+      <!--<div>
         <label for="user_id_box">
           User
         </label>
@@ -102,7 +110,7 @@
         </label>
 
         <input type="text" id="item_id_box" name="query_item_id" value="<%= @the_list.item_id %>">
-      </div>
+      </div>-->
 
       <div>
         <label for="list_name_box">
@@ -110,9 +118,9 @@
         </label>
 
         <input type="text" id="list_name_box" name="query_list_name" value="<%= @the_list.list_name %>">
-      </div>
+      
 
-      <div>
+      <!--<div>
         <label for="date_box">
           Date
         </label>
@@ -135,11 +143,12 @@
         </label>
 
         <input type="text" id="items_count_box" name="query_items_count" value="<%= @the_list.items_count %>">
-      </div>
+      </div>-->
 
       <button>
         Update list
       </button>
+      </div>
     </form>
   </div>
 </div>

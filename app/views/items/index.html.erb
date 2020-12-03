@@ -23,13 +23,22 @@
         <input type="text" id="item_name_box" name="query_item_name">
       </div>
 
-      <%# <div>
+      <div>
         <label for="list_id_box">
           List
         </label>
 
-        <input type="text" id="list_id_box" name="query_list_id">
+        <%# <input type="text" id="list_id_box" name="query_list_id">
       </div> %>
+      
+      <select id="list_id_box" name="query_list_name">
+        <% List.all.each do |a_list|%>
+          <option>
+            <%= a_list.list_name%>
+          </option>
+        <% end %>
+      </select>
+      </div>
 
       <div>
         <label for="quantity_box">
@@ -41,7 +50,7 @@
 
       <div>
         <label for="quantity_value_box">
-          Quantity metric
+          Quantity unit
         </label>
 
         <input type="text" id="quantity_value_box" name="query_quantity_value">
@@ -75,9 +84,9 @@
   <div>
     <table border="1">
       <tr>
-        <!--<th>
+        <th>
           ID
-        </th>-->
+        </th>
 
         <th>
           Item name
@@ -92,16 +101,16 @@
         </th>
 
         <th>
-          Quantity value
+          Quantity unit
         </th>
 
         <th>
           Price
         </th>
 
-        <th>
+        <!--<th>
           Pantry
-        </th>
+        </th>-->
 
         <!--<th>
           Created at
@@ -120,15 +129,16 @@
 
       <% @list_of_items.each do |an_item| %>
       <tr>
-        <!--<td>
+        <td>
           <%= an_item.id %>
-        </td>-->
+        </td>
 
         <td>
           <%= an_item.item_name %>
         </td>
 
         <td>
+          <%#= an_item.list.list_name %>
           <%= an_item.list_id %>
         </td>
 
@@ -144,9 +154,9 @@
           <%= an_item.price %>
         </td>
 
-        <td>
+        <!--<td>
           <%= an_item.pantry_id %>
-        </td>
+        </td>-->
 
         <!--<td>
           <%= time_ago_in_words(an_item.created_at) %> ago

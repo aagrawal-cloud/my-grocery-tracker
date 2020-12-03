@@ -20,7 +20,9 @@ class ItemsController < ApplicationController
   def create
     the_item = Item.new
     the_item.item_name = params.fetch("query_item_name")
-    #the_item.list_id = params.fetch("query_list_id")
+    selected_list_name = params.fetch("query_list_name")
+    matching_lists = List.where({:list_name => selected_list_name}).first
+    the_item.list_id = matching_lists.id
     the_item.quantity = params.fetch("query_quantity")
     the_item.price = params.fetch("query_price")
     the_item.quantity_value = params.fetch("query_quantity_value")
