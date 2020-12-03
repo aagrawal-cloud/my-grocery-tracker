@@ -15,7 +15,7 @@ class UserAuthenticationController < ApplicationController
       are_they_legit = user.authenticate(the_supplied_password)
     
       if are_they_legit == false
-        redirect_to("/user_sign_in", { :alert => "Incorrect passwor" })
+        redirect_to("/user_sign_in", { :alert => "Incorrect password" })
       else
         session[:user_id] = user.id
       
@@ -29,7 +29,7 @@ class UserAuthenticationController < ApplicationController
   def destroy_cookies
     reset_session
 
-    redirect_to("/", { :notice => "Signed out successfully." })
+    redirect_to("/", { :notice => "Signed out successfully" })
   end
 
   def sign_up_form
@@ -67,7 +67,7 @@ class UserAuthenticationController < ApplicationController
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.first_name = params.fetch("query_first_name")
     @user.last_name = params.fetch("query_last_name")
-    @user.lists_count = params.fetch("query_lists_count")
+    #@user.lists_count = params.fetch("query_lists_count")
     
     if @user.valid?
       @user.save
