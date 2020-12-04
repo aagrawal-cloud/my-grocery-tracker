@@ -59,4 +59,15 @@ class PantriesController < ApplicationController
 
     redirect_to("/pantries", { :notice => "Pantry deleted successfully."} )
   end
+
+  def view
+    the_userid = session[:user_id]
+
+    matching_users = User.where({ :id => the_userid }).first
+
+    @the_list = List.where({ :user_id => matching_users.id})
+
+    #@list_item = Item.where({ :list_id => @the_list.id})
+    render({ :template => "pantries/view_pantry.html.erb"})
+  end
 end

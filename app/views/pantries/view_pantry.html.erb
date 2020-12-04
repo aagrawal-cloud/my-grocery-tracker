@@ -1,12 +1,14 @@
  <div>
     <h1>
-      Grocery list for <%= @the_list.list_name %>
+      My Pantry
     </h1>
   </div>
 
   <table border="1">
     <tr>
       <th>Item
+      </th>
+      <th>Store
       </th>
       <th>Quantity
       </th>
@@ -18,8 +20,8 @@
       </th>
     </tr>
 
-    <% @list_item.each do |each_item|%>
-      <% if each_item.pantry_id == false%>
+    <% @the_list.each do |each_list|%>
+      <% if each_item.pantry_id == true %>
     
         <tr>
       
@@ -33,9 +35,9 @@
           <td><%= each_item.price %>
           </td>
           <td>
-            <form action="/insert_pantry" method="post">
+            <form action="/insert_list" method="post">
               <input >
-              <button>Add to Pantry</button>
+              <button>Buy</button>
             </form>
           </td>
       

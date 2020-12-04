@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
     the_item.quantity = params.fetch("query_quantity")
     the_item.price = params.fetch("query_price")
     the_item.quantity_value = params.fetch("query_quantity_value")
-    #the_item.pantry_id = params.fetch("query_pantry_id")
+    the_item.pantry_id = false
 
     if the_item.valid?
       the_item.save

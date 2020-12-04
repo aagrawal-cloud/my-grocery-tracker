@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post("/insert_pantry", { :controller => "pantries", :action => "create" })
           
   # READ
-  get("/pantries", { :controller => "pantries", :action => "index" })
+  get("/pantries", { :controller => "pantries", :action => "view" })
   
   get("/pantries/:path_id", { :controller => "pantries", :action => "show" })
   
