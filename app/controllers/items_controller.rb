@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
     the_item.price = params.fetch("query_price")
     the_item.quantity_value = params.fetch("query_quantity_value")
     the_item.pantry_id = false
+    the_item.user_id = session[:user_id]
 
     if the_item.valid?
       the_item.save

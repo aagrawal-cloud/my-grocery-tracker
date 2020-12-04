@@ -18,7 +18,7 @@
       </th>
     </tr>
 
-    <% @list_item.each do |each_item|%>
+    <% @list_item.where({ :user_id => @current_user.id}).each do |each_item|%>
       <% if each_item.pantry_id == false%>
     
         <tr>
@@ -33,8 +33,7 @@
           <td><%= each_item.price %>
           </td>
           <td>
-            <form action="/insert_pantry" method="post">
-              <input >
+            <form action="/insert_pantry" method="post">            
               <button>Add to Pantry</button>
             </form>
           </td>

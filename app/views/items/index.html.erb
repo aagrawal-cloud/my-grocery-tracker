@@ -32,7 +32,7 @@
       </div> %>
       
       <select id="list_id_box" name="query_list_name">
-        <% List.all.each do |a_list|%>
+        <% List.all.where({ :user_id => @current_user.id}).each do |a_list|%>
           <option>
             <%= a_list.list_name%>
           </option>

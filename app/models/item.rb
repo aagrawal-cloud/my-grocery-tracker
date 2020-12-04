@@ -11,6 +11,7 @@
 #  updated_at     :datetime         not null
 #  list_id        :integer
 #  pantry_id      :boolean
+#  user_id        :integer
 #
 class Item < ApplicationRecord
   belongs_to(:list, { :required => false, :class_name => "List", :foreign_key => "list_id", :counter_cache => true })
@@ -21,5 +22,5 @@ class Item < ApplicationRecord
 
   has_many(:user, { :through => :list, :source => :user })
 
-  validates(:item_name, { :uniqueness => true, :presence => { :message => "Please enter a unique name for your item"} } )
+  #validates(:item_name, { :uniqueness => true, :presence => { :message => "Please enter a unique name for your item"} } )
 end
