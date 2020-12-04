@@ -34,7 +34,7 @@ class ListsController < ApplicationController
       the_list.save
       redirect_to("/lists", { :notice => "List created successfully." })
     else
-      redirect_to("/lists", { :notice => "List failed to create successfully." })
+      redirect_to("/lists", { :notice => "List failed to create successfully. Please enter a valid list name" })
     end
   end
 
@@ -64,5 +64,17 @@ class ListsController < ApplicationController
     the_list.destroy
 
     redirect_to("/lists", { :notice => "List deleted successfully."} )
+  end
+
+  def view
+    the_id = params.fetch("path_id")
+
+    matching_lists = List.where({ :id => the_id })
+
+    @the_list = matching_lists.at(0)
+
+    @list_item = Item.where({ :list_id => @the_list.id})
+
+    render({ :template => "lists/view_lists.html.erb"})
   end
 end

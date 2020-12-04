@@ -1,0 +1,38 @@
+ <div>
+    <h1>
+      Grocery list for <%= @the_list.list_name %>
+    </h1>
+  </div>
+
+  <table border="1">
+    <tr>
+      <th>Item
+      </th>
+      <th>Quantity
+      </th>
+      <th>Quantity unit
+      </th>
+      <th>Price
+      </th>
+      <th>
+      </th>
+    </tr>
+
+    <% @list_item.each do |each_item|%>
+    <tr>
+      <td><%= each_item.item_name %>
+      </td>
+      <td><%= each_item.quantity %>
+      </td>
+      <td><%= each_item.quantity_value %>
+      </td>
+      <td><%= each_item.price %>
+      </td>
+      <td>
+        <form>
+          <button>Add to Pantry</button>
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </table>
