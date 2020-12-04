@@ -10,7 +10,7 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  list_id        :integer
-#  pantry_id      :integer
+#  pantry_id      :boolean
 #
 class Item < ApplicationRecord
   belongs_to(:list, { :required => false, :class_name => "List", :foreign_key => "list_id", :counter_cache => true })

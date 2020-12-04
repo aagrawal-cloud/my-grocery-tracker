@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.float :quantity
       t.float :price
       t.string :quantity_value
-      t.integer :pantry_id
+      t.boolean :pantry_id
 
       t.timestamps
     end

@@ -11,7 +11,7 @@
         </a>
       </div>
 
-      <div>
+      <!--<div>
         <a href="/delete_list/<%= @the_list.id %>">
           Delete list
         </a>
@@ -23,7 +23,7 @@
           Edit list
         </a>
       </div>
-    </div>
+    </div>-->
 
 
     <!--<dl>
@@ -86,13 +86,24 @@
   </div>
 </div>
 
+<table>
+  <tr>
+    <th>Store Name</th>
+  </tr> 
+  <tr>
+    <td>
+      <%= @the_list.list_name %>
+    </td>
+   </tr> 
+</table>
+
 <hr>
 
 
 <div>
   <div>
     <h2>
-      Edit list
+      Edit Store
     </h2>
 
     <form action="/modify_list/<%= @the_list.id %>"  method="post" >
@@ -114,7 +125,7 @@
 
       <div>
         <label for="list_name_box">
-          List name
+          Store name
         </label>
 
         <input type="text" id="list_name_box" name="query_list_name" value="<%= @the_list.list_name %>">
@@ -146,7 +157,7 @@
       </div>-->
 
       <button>
-        Update list
+        Update store
       </button>
       </div>
     </form>

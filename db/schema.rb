@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_170042) do
     t.float "quantity"
     t.float "price"
     t.string "quantity_value"
-    t.integer "pantry_id"
+    t.boolean "pantry_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

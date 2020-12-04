@@ -15,4 +15,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def index
+
+    if @current_user == nil
+      render({ :template => "user_homepage/homepage.html.erb" })
+    else
+      render({ :template => "user_homepage/index.html.erb"})
+    end
+  
+  end
+
 end
