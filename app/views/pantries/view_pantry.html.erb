@@ -21,7 +21,7 @@
     </tr>
 
     <% @the_item.each do |each_item|%>
-      <% if each_item.pantry_id == false %>
+      <% if each_item.pantry_id == true %>
     
         <tr>
       
@@ -37,7 +37,7 @@
           <td><%= each_item.price %>
           </td>
           <td>
-            <form action="/insert_list" method="post">
+            <form action="/item_to_list/<%= each_item.id %>" method="post">
               <button>Buy</button>
             </form>
           </td>

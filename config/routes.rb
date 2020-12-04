@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   # UPDATE
   
   post("/modify_item/:path_id", { :controller => "items", :action => "update" })
+  post("/item_to_list/:path_id", { :controller => "items", :action => "add_to_list" })
+  post("/insert_pantry/:path_id", { :controller => "items", :action => "add_to_pantry" })
+  
   
   # DELETE
   get("/delete_item/:path_id", { :controller => "items", :action => "destroy" })

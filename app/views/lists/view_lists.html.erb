@@ -33,7 +33,7 @@
           <td><%= each_item.price %>
           </td>
           <td>
-            <form action="/insert_pantry" method="post">            
+            <form action="/insert_pantry/<%= each_item.id %>" method="post">            
               <button>Add to Pantry</button>
             </form>
           </td>

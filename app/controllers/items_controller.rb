@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
       the_item.save
       redirect_to("/items", { :notice => "Item created successfully." })
     else
-      redirect_to("/items", { :notice => "Item failed to create successfully." })
+      redirect_to("/items", { :notice => "Item failed to create successfully. Please enter a unique item name" })
     end
   end
 
@@ -53,6 +53,34 @@ class ItemsController < ApplicationController
       redirect_to("/items/#{the_item.id}", { :notice => "Item updated successfully."} )
     else
       redirect_to("/items/#{the_item.id}", { :alert => "Item failed to update successfully." })
+    end
+  end
+
+  def add_to_pantry
+    the_id = params.fetch("path_id")
+    the_item = Item.where({ :id => the_id }).at(0)
+
+    the_item.pantry_id = true
+
+    if the_item.valid?
+      the_item.save
+      redirect_to("/view_lists/#{the_id.list.list_id}", { :notice => "Item updated successfully."} )
+    else
+      redirect_to("/view_lists/#{the_id.list.list_id}", { :alert => "Item failed to update successfully." })
+    end
+  end
+
+  def add_to_list
+    the_id = params.fetch("path_id")
+    the_item = Item.where({ :id => the_id }).at(0)
+
+    the_item.pantry_id = false
+
+    if the_item.valid?
+      the_item.save
+      redirect_to("/pantries", { :notice => "Item updated successfully."} )
+    else
+      redirect_to("/pantries", { :alert => "Item failed to update successfully." })
     end
   end
 
