@@ -103,10 +103,6 @@
         </th>
 
         <th>
-          Items
-        </th>
-
-        <th>
         </th>
 
         <th>
@@ -124,7 +120,7 @@
         </th>
       </tr>
 
-      <% @list_of_lists.where({user_id => @current_user.id}).each do |a_list| %>
+      <% @list_of_lists.where({ :user_id => @current_user.id}).each do |a_list| %>
       <tr>
         <td>
           <%= a_list.id %>
