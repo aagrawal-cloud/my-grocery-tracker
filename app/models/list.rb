@@ -25,4 +25,5 @@ class List < ApplicationRecord
 
   #validates(:list_name, { :uniqueness => { :scope => ["user_id"] } })
   #validates(:list_name, { :uniqueness => true, :presence => { :message => "Please enter a unique name for your list"} } )
+  validates(:list_name, { :uniqueness => { :scope => ["user_id"] } })
   end

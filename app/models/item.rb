@@ -23,4 +23,6 @@ class Item < ApplicationRecord
   has_many(:user, { :through => :list, :source => :user })
 
   #validates(:item_name, { :uniqueness => true, :presence => { :message => "Please enter a unique name for your item"} } )
+
+  validates(:item_name, { :uniqueness => { :scope => ["user_id"] } })
 end
