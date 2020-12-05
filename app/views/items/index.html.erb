@@ -7,6 +7,10 @@
   <div>
     <a href="/lists">My Stores</a>
   </div>
+  
+  <div>
+    <a href="/view_lists">My Lists</a>
+  </div>
 
   <div>
     <h1>
@@ -137,7 +141,7 @@
 
       </tr>
 
-      <% @list_of_items.each do |an_item| %>
+      <% @list_of_items.where({ :user_id => @current_user}).each do |an_item| %>
       <tr>
         <!--<td>
           <%= an_item.id %>
