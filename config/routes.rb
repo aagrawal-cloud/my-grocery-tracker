@@ -55,6 +55,9 @@ Rails.application.routes.draw do
   get("/lists/:path_id", { :controller => "lists", :action => "show" })
 
   get("/view_lists/:path_id", { :controller => "lists", :action => "view" })
+
+  get("/view_lists", { :controller => "lists", :action => "view_list" })
+
   
   # UPDATE
   

@@ -1,0 +1,46 @@
+<div>
+    <a href="/items">My Items</a>
+  </div>
+
+  <div>
+    <a href="/pantries">My Pantry</a>
+  </div>
+
+  <div>
+    <a href="/view_lists">My Lists</a>
+ </div>
+
+ <br>
+
+  <table>
+      <tr>
+
+        <th>
+          Store name
+        </th>
+
+        <th>
+        </th>
+
+      </tr>
+
+      <% List.where({ :user_id => @current_user.id}).each do |a_list| %>
+      <tr>
+
+        <td>
+          <a href="/lists/<%= a_list.id %>">
+            <%= a_list.list_name %>
+          </a>
+        </td>
+
+        <td></td>
+
+        <td>
+          <a href="/view_lists/<%= a_list.id %>">
+            View List
+          </a>
+        </td>
+
+      </tr>
+      <% end %>
+    </table>

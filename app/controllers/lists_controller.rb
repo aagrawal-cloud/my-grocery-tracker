@@ -77,4 +77,8 @@ class ListsController < ApplicationController
 
     render({ :template => "lists/view.html.erb"})
   end
+
+  def view_list
+    render({ :template => "lists/view_list.html.erb"})
+  end
 end
