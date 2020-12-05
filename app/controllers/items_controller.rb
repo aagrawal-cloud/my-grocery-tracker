@@ -42,7 +42,9 @@ class ItemsController < ApplicationController
     the_item = Item.where({ :id => the_id }).at(0)
 
     the_item.item_name = params.fetch("query_item_name")
-    #the_item.list_id = params.fetch("query_list_id")
+    user_list = params.fetch("query_list_name")
+    matching_list = List.where({ :list_name => user_list}).at(0)
+    the_item.list_id = matching_list.id
     the_item.quantity = params.fetch("query_quantity")
     the_item.price = params.fetch("query_price")
     the_item.quantity_value = params.fetch("query_quantity_value")

@@ -5,6 +5,10 @@
   </div>
 
   <div>
+    <a href="/lists">My Stores</a>
+  </div>
+
+  <div>
     <h1>
       List of all items
     </h1>
@@ -89,9 +93,9 @@
   <div>
     <table border="1">
       <tr>
-        <th>
+        <!--<th>
           ID
-        </th>
+        </th>-->
 
         <th>
           Item name
@@ -130,20 +134,20 @@
 
         <th>
         </th>
+
       </tr>
 
       <% @list_of_items.each do |an_item| %>
       <tr>
-        <td>
+        <!--<td>
           <%= an_item.id %>
+        </td>-->
+
+        <td>
+          <%= an_item.item_name %></a>
         </td>
 
         <td>
-          <%= an_item.item_name %>
-        </td>
-
-        <td>
-          <%#= an_item.list.list_name %>
           <%= an_item.list.list_name %>
         </td>
 
@@ -172,7 +176,7 @@
 
         <td>
           <a href="/items/<%= an_item.id %>">
-            Show details
+            Edit
           </a>
         </td>
 

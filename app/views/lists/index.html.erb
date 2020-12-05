@@ -1,4 +1,13 @@
 <div>
+
+  <div>
+    <a href="/items">My Items</a>
+  </div>
+
+  <div>
+    <a href="/pantries">My Pantry</a>
+  </div>
+
   <div>
     <h1>
       My Stores
@@ -78,9 +87,9 @@
   <div>
     <table>
       <tr>
-        <th>
+        <!--<th>
           ID
-        </th>
+        </th>-->
 
         <!--<th>
           User
@@ -122,9 +131,9 @@
 
       <% @list_of_lists.where({ :user_id => @current_user.id}).each do |a_list| %>
       <tr>
-        <td>
+        <!--<td>
           <%= a_list.id %>
-        </td>
+        </td>-->
 
         <!--<td>
           <%= a_list.user_id %>
