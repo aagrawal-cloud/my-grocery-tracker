@@ -75,6 +75,6 @@ class ListsController < ApplicationController
 
     @list_item = Item.where({ :list_id => @the_list.id})
 
-    render({ :template => "lists/view_lists.html.erb"})
+    render({ :template => "lists/view.html.erb"})
   end
 end

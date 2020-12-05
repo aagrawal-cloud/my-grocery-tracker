@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def add_to_pantry
+  def insert_pantry
     the_id = params.fetch("path_id")
     the_item = Item.where({ :id => the_id }).at(0)
 
@@ -66,7 +66,9 @@ class ItemsController < ApplicationController
 
     if the_item.valid?
       the_item.save
-      redirect_to("/view_lists/#{the_id.list.list_id}", { :notice => "Item updated successfully."} )
+      user_list = List.where({ :id => the_item.list_id}).at(0)
+      user_list_id = user_list.id
+      redirect_to("/view_lists/#{user_list_id}", { :notice => "Item updated successfully."} )
     else
       redirect_to("/view_lists/#{the_id.list.list_id}", { :alert => "Item failed to update successfully." })
     end
